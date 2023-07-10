@@ -37,7 +37,7 @@ const diseases = {
       const listItem = document.createElement('li');
       listItem.textContent = 'No matching diseases found.';
       const consultLink = document.createElement('a');
-      consultLink.href = 'consult.html';
+      consultLink.href = 'https://www.practo.com/kolkata/doctors';
       consultLink.textContent = 'Consult Doctors';
       listItem.appendChild(document.createElement('br'));
       listItem.appendChild(document.createElement('br'));
