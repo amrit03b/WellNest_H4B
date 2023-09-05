@@ -6,6 +6,7 @@
 	<!-- Bootstrap theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 	<title>WellNest Authorization</title>
 </head>
 <body>
@@ -25,32 +26,33 @@
     </ul>
 </div>
 </div>
+<div class="col-sm-4">
+	<img src="logo-color.png"
+width="350"
+hieght="350"
+/>
+</div>
 <br>
 <div class="container">	
   <form name="registration_form" id="registration_form" method="post" action="#" enctype="multipart/form-data" >
   <div class="row">
-
+	<div id="reg" style="display: none;">
 	<div class="col-sm-4">
 		<div class="form-group">
-	      <label for="email">Email</label>
+			<label for="email">Email</label>
 		  <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
 		</div>
-		
 		<div class="form-group">
 	      <label for="password" >Password</label>
 		  <input type="password" name="password" id="password" class="form-control"  placeholder="Enter your password">
 		</div>
-		<button type="button" id="register" name="register" class="btn btn-success" style="background-color:#ffa458;color:
-		#ba3b0a">Register Now
+		<button type="button" id="register" name="register" class="btn btn-success">Register Now
 		</button>
+		<c id="ok" onclick="hide()" style="cursor:pointer;"><center><br>Already A User? Sign In</center></c>
+	</div>
 	</div><!-- end col -->
 	</form>
-	<div class="col-sm-4">
-		<img src="logo-color.png"
-    width="350"
-    hieght="350"
-    />
-	</div>
+	<div id="logi">
 	<form name="login_form" id="login_form" method="post" action="#" enctype="multipart/form-data" >
 	<div class="col-sm-4">
 		<div class="form-group">
@@ -62,22 +64,37 @@
 	      <label for="password">Password</label>
 		  <input type="password" name="login_password" id="login_password" class="form-control"  placeholder="Enter your password">
 		</div>
-		<button type="button" id="login" name="login" class="btn btn-success" style="background-color:#ffa458;color:
-		#ba3b0a">Login
+		<button type="button" id="login" name="login" class="btn btn-success">Login
 			<style>
 				body{
 					color:#ba3b0a;
 				}
 			</style>
 		</button>
+		<c id="go" onclick="togglehide()" style="cursor:pointer;"><center><br>New user? Register Now</center></c>	
 	</div><!-- end col -->
-	
-  </div><!--  end row -->		
+  </div><!--  end row -->
+</div>	
   </form>
 </div>
 <br>
-<center>Developed by <a href="https://wellnest.xyz/" style="color:#ffa458">WellNest</a></center>
+<w style="position: absolute;bottom: 5px;" id="make">
+<center>Developed by&nbsp;<a href="https://wellnest.xyz/" style="color:#ffa458;">WellNest</a>
+</center>
+</w>
 </body>
+<script type="text/javascript">
+	function togglehide(){
+		document.getElementById('reg');
+		reg.style.display='block';
+		logi.style.display='none';
+	}
+	function hide(){
+		document.getElementById('logi');
+		logi.style.display='block';
+		reg.style.display='none';
+	}
+</script>
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
